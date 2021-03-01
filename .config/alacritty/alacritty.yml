@@ -12,15 +12,15 @@ window:
 # fonts
 font:
   normal:
-    family: 'SF Mono'
+    family: 'SFMono Nerd Font'
     style: Regular
 
   italic:
-    family: 'SF Mono'
+    family: 'SFMono Nerd Font'
     style: Regular Italic 
 
   bold:
-    family: SF Mono
+    family: 'SFMono Nerd Font'
     style: Bold 
 
   use_thin_strokes: true
@@ -33,8 +33,8 @@ font:
 #   Plus :colorscheme peachpuff
 #   gives the best comments
 colors:
-  name: Gotham
-  author: whatyouhide
+  name: "Gotham Dark" 
+  author: "ramsaycarslaw" 
   primary:
     # background: "#0a0f14"
     background: "#000000"

@@ -1,9 +1,9 @@
-" I only really use TMUX when I have no plugins loaded
+" vimrc config 
 set rnu nu
 set tabstop=2
 set shiftwidth=2
 set softtabstop=2
-set smartcase
+set ic
 set hidden
 set nobackup
 set noswapfile
@@ -19,6 +19,7 @@ set smartindent
 set expandtab
 set noerrorbells
 set nocompatible
+set nowrap
 set backspace=indent,eol,start
 set ruler
 
@@ -36,9 +37,19 @@ nnoremap <leader>l :wincmd l<CR>
 " Escape can also be a pain sometimes
 imap jj <Esc>
 imap kk <Esc>
+
 " I find $ to be a bit too awkward
 nmap L $
 nmap H 0
+vmap L $
+vmap H 0
+
+" Arrow keys are relative lines
+nmap <Up> gk
+nmap <Down> gj
+
+vmap <Down> gj
+vmap <Down> gj
 
 colorscheme peachpuff
 
@@ -46,4 +57,10 @@ colorscheme peachpuff
 hi clear SpellBad
 hi SpellBad cterm=underline,bold
 hi SpellBad ctermfg=red
+hi Visual ctermbg=DarkBlue 
+hi Visual ctermfg=White
+highlight Comment cterm=italic gui=italic
 
+" You have to enter these charecters with C-v Esc
+set t_ZH=[3m
+set t_ZR=[23m
