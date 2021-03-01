@@ -95,8 +95,6 @@ Not on SSL."))
   (setq ring-bell-function 'ignore
 	inhibit-startup-message t
 	frame-resize-pixelwise nil)
-  ;; -- EMAIL --
-  ;; qvbg-ugfm-qzco-vegd
   (setq user-mail-address "ramsaycarslaw@icloud.com"
 	user-full-name "Ramsay Carslaw")
   :bind

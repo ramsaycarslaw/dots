@@ -1,8 +1,9 @@
 
  (setq default-directory "/Users/ramsaycarslaw/")
-;;;;;;;;;;;;;;;;;;;;;;;;
-;; Package Handelling ;;
-;;;;;;;;;;;;;;;;;;;;;;;;
+
+;; ------------------------------------------------------------
+;;                             Packages
+;; ------------------------------------------------------------
 
 (require 'package)
 (let* ((no-ssl (and (memq system-type '(windows-nt ms-dos))
@@ -25,9 +26,9 @@ Not on SSL."))
 (eval-when-compile
   (require 'use-package))
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Emacs Settings       ;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; ------------------------------------------------------------
+;;                         Emacs Settings       
+;; ------------------------------------------------------------
 
 (use-package emacs
   :init
@@ -79,9 +80,9 @@ Not on SSL."))
 	    (exec-path-from-shell-initialize))
   (setenv "GOPATH" "/Users/ramsaycarslaw/go"))
 
-;;;;;;;;;;;;;;;
-;; Evil Mode ;;
-;;;;;;;;;;;;;;;
+;; ------------------------------------------------------------
+;;                       Evil Mode 
+;; ------------------------------------------------------------
 
 (use-package evil
   :ensure t
@@ -154,7 +155,7 @@ Not on SSL."))
 (use-package gotham-theme
   :ensure t)
 
-(add-to-list 'custom-theme-load-path ".emacs.d/rcc-theme")
+(load-theme 'gotham-dark t)
 
 (use-package evil-goggles
   :ensure t
