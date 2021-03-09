@@ -38,8 +38,8 @@ nnoremap <leader>h :wincmd h<CR>
 nnoremap <leader>j :wincmd j<CR>
 nnoremap <leader>k :wincmd k<CR>
 nnoremap <leader>l :wincmd l<CR>
-nnoremap <leader>v :wincmd v<CR>
-nnoremap <leader>h :wincmd s<CR>
+nnoremap <leader>\ :wincmd v<CR>
+nnoremap <leader>- :wincmd s<CR>
 nnoremap <C-j> :resize +2<CR>
 nnoremap <C-k> :resize -2<CR>
 nnoremap <C-h> :vertical resize +2<CR>
@@ -78,12 +78,13 @@ hi VertSplit cterm=NONE
 set t_ZH=[3m
 set t_ZR=[23m
 
-command L !lualatex %:t
+" Word count for LateX
+autocmd FileType tex map <leader>w :w !detex \| wc -w<CR>
 
 " brew install choose-gui
 function! ChooseFile()
   let selection = system("ls -a | choose")
-  if selection == ""
+  if len(selection) == 0 
     return
   endif
   exec ":e " . selection
@@ -91,6 +92,9 @@ endfunction
 
 function! SearchFile()
   let selection = system('cat -n .vimrc | choose') 
+  if len(selection) == 0 
+    return
+  endif
   let splits = split(selection)
   exec ":" . splits[0]
 endfunction
@@ -100,3 +104,5 @@ if executable('choose')
   nnoremap <leader>f :call ChooseFile()<cr>
   nnoremap <leader>s :call SearchFile()<cr>
 endif
+
+source ~/.vim/compile.vim
